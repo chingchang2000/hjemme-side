@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Den helt uofficielle folkebevægelse for fire dages weekend i Danmark." />
+  <meta name="theme-color" content="#e30613" />
+  <title>4 Dages Weekend — fordi mandag er overvurderet</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23e30613'/%3E%3Cpath d='M0 27h64v10H0zM27 0h10v64H27z' fill='white'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Shrikhand&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="top-strip">⚠️ VIGTIG NATIONAL MEDDELELSE: WEEKENDEN ER 40% FOR KORT</div>
+
+  <header class="hero">
+    <nav aria-label="Hovedmenu">
+      <a class="brand" href="#top" aria-label="4 Dages Weekend, forsiden"><span>4</span>DW</a>
+      <div class="nav-links">
+        <a href="#beviser">Beviserne</a>
+        <a href="#planen">Planen</a>
+        <a class="nav-vote" href="#stem">Stem nu</a>
+      </div>
+    </nav>
+
+    <main id="top" class="hero-grid">
+      <section class="hero-copy">
+        <p class="eyebrow">FOLKEBEVÆGELSEN MOD ALT FOR KORTE WEEKENDER</p>
+        <h1>Danmark fortjener<br><em>4 dages weekend.</em></h1>
+        <p class="lead">Vi har prøvet to dage. Det var hyggeligt, men det var tydeligvis en demo-version. Lad os låse op for hele weekenden.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#stem">Jeg kræver mere sofa</a>
+          <a class="button ghost" href="#beviser">Se de ekstremt seriøse beviser</a>
+        </div>
+        <p class="tiny-proof">✓ Godkendt af 9 ud af 10 personer, der helst ville ligge ned</p>
+      </section>
+
+      <section id="stem" class="vote-card" aria-labelledby="vote-title">
+        <div class="vote-stamp">DEMOKRATI-ISH</div>
+        <p class="vote-kicker">Dagens vigtigste spørgsmål</p>
+        <h2 id="vote-title">Skal Danmark indføre 4 dages weekend?</h2>
+        <div class="vote-buttons" role="group" aria-label="Vælg dit svar">
+          <button class="vote yes" data-vote="yes"><span>JA!</span><small>Jeg har allerede pakket snacks</small></button>
+          <button class="vote no" data-vote="no"><span>NEJ</span><small>Jeg elsker åbenbart mandage</small></button>
+        </div>
+        <div class="results" aria-live="polite" hidden>
+          <div class="result-label"><span>JA, NATURLIGVIS</span><strong id="yes-percent">87%</strong></div>
+          <div class="meter"><span id="yes-bar"></span></div>
+          <div class="result-label"><span>NEJ, MYSTISK NOK</span><strong id="no-percent">13%</strong></div>
+          <div class="meter no-meter"><span id="no-bar"></span></div>
+        </div>
+        <p id="vote-message" class="vote-message">Du kan kun stemme én gang i denne browser. Folkestyre, men med småkager.</p>
+      </section>
+    </main>
+    <div class="ticker" aria-hidden="true"><span>FREDAG · LØRDAG · SØNDAG · BONUS-SØNDAG · FREDAG · LØRDAG · SØNDAG · BONUS-SØNDAG ·</span></div>
+  </header>
+
+  <section id="beviser" class="evidence section-pad">
+    <div class="section-heading">
+      <p class="eyebrow dark">FORSKNING VI LIGE HAR FUNDET PÅ*</p>
+      <h2>Tre vandtætte argumenter.<br><em>Næsten.</em></h2>
+    </div>
+    <div class="cards">
+      <article class="fact-card rotate-left">
+        <div class="icon">🛋️</div>
+        <p class="number">01</p>
+        <h3>Sofaen savner dig</h3>
+        <p>Din sofa arbejder 24/7 uden overenskomst. Det mindste, du kan gøre, er at støtte den med hele din kropsvægt.</p>
+        <span class="source">Kilde: Sofaens Fagforening</span>
+      </article>
+      <article class="fact-card yellow">
+        <div class="icon">☕</div>
+        <p class="number">02</p>
+        <h3>Mandag er mistænkelig</h3>
+        <p>Ingen har nogensinde sagt “Yes, mandag!” uden enten at lyve eller sælge et onlinekursus.</p>
+        <span class="source">Kilde: Ren sund fornuft</span>
+      </article>
+      <article class="fact-card rotate-right">
+        <div class="icon">🥐</div>
+        <p class="number">03</p>
+        <h3>Brunch kræver tid</h3>
+        <p>En ordentlig brunch slutter først kl. 16. Derefter skal man restituere. Matematikken giver sig selv.</p>
+        <span class="source">Kilde: Institut for Croissanter</span>
+      </article>
+    </div>
+    <p class="disclaimer">* Forskningen er foretaget på en serviet under en meget lang frokost.</p>
+  </section>
+
+  <section id="planen" class="plan section-pad">
+    <div class="plan-copy">
+      <p class="eyebrow">DEN GENNEMTÆNKTE PLAN</p>
+      <h2>Sådan redder vi Danmark på tre meget afslappede trin</h2>
+    </div>
+    <ol class="steps">
+      <li><span>1</span><div><h3>Torsdag kl. 16</h3><p>Vi lukker computeren. Også den fane, vi har haft åben siden tirsdag for at se travle ud.</p></div></li>
+      <li><span>2</span><div><h3>Fredag bliver Fridag™</h3><p>Obligatorisk hygge. Møder over 0 minutter straffes med lunken automatkaffe.</p></div></li>
+      <li><span>3</span><div><h3>Tirsdag er ny mandag</h3><p>Men den føles mindre farlig, fordi der allerede kun er tre arbejdsdage tilbage. Skakmat.</p></div></li>
+    </ol>
+  </section>
+
+  <section class="calculator section-pad">
+    <div class="calc-box">
+      <div>
+        <p class="eyebrow dark">DEN OFFICIELLE HYGGE-BEREGNER</p>
+        <h2>Hvor meget liv får du tilbage?</h2>
+        <p>Vælg din nuværende mandags-entusiasme. Beregningen er videnskabeligt tvivlsom, men følelsesmæssigt korrekt.</p>
+      </div>
+      <div class="slider-wrap">
+        <label for="monday">Din glæde ved mandage: <strong id="monday-value">2/10</strong></label>
+        <input id="monday" type="range" min="0" max="10" value="2" />
+        <div class="calc-result"><span id="hours">416</span><small>ekstra timer til at stirre meningsfuldt ud ad vinduet om året</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq section-pad">
+    <p class="eyebrow dark">KRITISKE SPØRGSMÅL</p>
+    <h2>FAQ — Fordi nogen altid skal være fornuftig</h2>
+    <details><summary>Hvem skal betale for det her?</summary><p>Vi foreslår den samme mystiske konto, som betaler for kommunale kunstværker i rundkørsler.</p></details>
+    <details><summary>Hvad nu hvis jeg faktisk godt kan lide mit arbejde?</summary><p>Fantastisk! Så kan du glæde dig til det i hele fire dage. Glæde bliver bedre af optakt.</p></details>
+    <details><summary>Er en fire dages weekend realistisk?</summary><p>Nej. Men det var Storebæltsbroen heller ikke, før nogen fandt en meget stor bunke beton.</p></details>
+  </section>
+
+  <footer>
+    <div class="footer-big">SES PÅ TIRSDAG.</div>
+    <p>En 100% uofficiel, 110% afslappet bevægelse.</p>
+    <a href="#stem">Afgiv din historiske stemme ↑</a>
+  </footer>
+
+  <div id="confetti" aria-hidden="true"></div>
+  <script src="script.js"></script>
+</body>
+</html>
