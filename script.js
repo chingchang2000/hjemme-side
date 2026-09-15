@@ -1,28 +1,37 @@
-const STORAGE_KEY = "fire-dages-weekend-stemme-v1";
-const BASE = { yes: 8742, no: 1258 };
+const STORAGE_KEY = "fire-dages-weekend-stemme-v2";
 
 const buttons = [...document.querySelectorAll(".vote")];
-const results = document.querySelector(".results");
 const message = document.querySelector("#vote-message");
+const yesCount = document.querySelector("#yes-count");
+const noCount = document.querySelector("#no-count");
 
-function showResult(vote) {
-  const totals = { ...BASE };
-  if (vote === "yes" || vote === "no") totals[vote] += 1;
-  const sum = totals.yes + totals.no;
-  const yes = Math.round((totals.yes / sum) * 100);
-  const no = 100 - yes;
-  document.querySelector("#yes-percent").textContent = `${yes}%`;
-  document.querySelector("#no-percent").textContent = `${no}%`;
-  document.querySelector("#yes-bar").style.width = `${yes}%`;
-  document.querySelector("#no-bar").style.width = `${no}%`;
-  results.hidden = false;
+function readElection() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
+    if (!saved || !["yes", "no"].includes(saved.vote)) return { vote: null, yes: 0, no: 0 };
+    return {
+      vote: saved.vote,
+      yes: Number(saved.yes) || 0,
+      no: Number(saved.no) || 0,
+    };
+  } catch {
+    return { vote: null, yes: 0, no: 0 };
+  }
+}
+
+function renderElection(election) {
+  yesCount.textContent = String(election.yes);
+  noCount.textContent = String(election.no);
+
+  if (!election.vote) return;
+
   buttons.forEach((button) => {
     button.disabled = true;
-    if (button.dataset.vote === vote) button.classList.add("selected");
+    button.classList.toggle("selected", button.dataset.vote === election.vote);
   });
-  message.textContent = vote === "yes"
-    ? "Din stemme er gemt. Grundloven er ikke opdateret endnu, men stemningen er fremragende."
-    : "Din stemme er gemt. En bekymret croissant vil kontakte dig inden for 3–5 hverdage.";
+  message.textContent = election.vote === "yes"
+    ? "Din JA-stemme er gemt. Den bliver stående, også når siden genindlæses. Grundloven følger forhåbentlig efter."
+    : "Din NEJ-stemme er gemt. Den bliver stående, også når siden genindlæses. En bekymret croissant er orienteret.";
 }
 
 function confetti() {
@@ -40,15 +49,21 @@ function confetti() {
 }
 
 buttons.forEach((button) => button.addEventListener("click", () => {
-  if (localStorage.getItem(STORAGE_KEY)) return;
+  const election = readElection();
+  if (election.vote) return;
+
   const vote = button.dataset.vote;
-  localStorage.setItem(STORAGE_KEY, vote);
-  showResult(vote);
+  const updated = {
+    vote,
+    yes: vote === "yes" ? 1 : 0,
+    no: vote === "no" ? 1 : 0,
+  };
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
+  renderElection(updated);
   if (vote === "yes") confetti();
 }));
 
-const existingVote = localStorage.getItem(STORAGE_KEY);
-if (existingVote) showResult(existingVote);
+renderElection(readElection());
 
 const slider = document.querySelector("#monday");
 slider.addEventListener("input", () => {

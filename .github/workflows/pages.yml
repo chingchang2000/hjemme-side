@@ -1,0 +1,34 @@
+name: Udgiv hjemmesiden
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hent hjemmesiden
+        uses: actions/checkout@v6
+      - name: Klargør GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Pak hjemmesiden
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: .
+      - name: Udgiv
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -45,13 +45,17 @@
           <button class="vote yes" data-vote="yes"><span>JA!</span><small>Jeg har allerede pakket snacks</small></button>
           <button class="vote no" data-vote="no"><span>NEJ</span><small>Jeg elsker åbenbart mandage</small></button>
         </div>
-        <div class="results" aria-live="polite" hidden>
-          <div class="result-label"><span>JA, NATURLIGVIS</span><strong id="yes-percent">87%</strong></div>
-          <div class="meter"><span id="yes-bar"></span></div>
-          <div class="result-label"><span>NEJ, MYSTISK NOK</span><strong id="no-percent">13%</strong></div>
-          <div class="meter no-meter"><span id="no-bar"></span></div>
+        <div class="results" aria-live="polite">
+          <div class="vote-count yes-count">
+            <span>JA-STEMMER</span>
+            <strong id="yes-count">0</strong>
+          </div>
+          <div class="vote-count no-count">
+            <span>NEJ-STEMMER</span>
+            <strong id="no-count">0</strong>
+          </div>
         </div>
-        <p id="vote-message" class="vote-message">Du kan kun stemme én gang i denne browser. Folkestyre, men med småkager.</p>
+        <p id="vote-message" class="vote-message">Tælleren starter på nul. Du kan kun stemme én gang i denne browser. Folkestyre, men med småkager.</p>
       </section>
     </main>
     <div class="ticker" aria-hidden="true"><span>FREDAG · LØRDAG · SØNDAG · BONUS-SØNDAG · FREDAG · LØRDAG · SØNDAG · BONUS-SØNDAG ·</span></div>
