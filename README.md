@@ -4,8 +4,9 @@ En humoristisk, responsiv kampagneside for Danmarks vigtigste helt uofficielle s
 
 ## Funktioner
 
-- Afstemning, der starter på 0 og gemmer én stemme pr. browser via `localStorage`
-- Rigtige stemmetal (0, 1) i stedet for opdigtede procenter
+- Én fælles online-afstemning, så alle besøgende ser de samme stemmetal
+- Atomisk optælling, der starter på 0 uden opdigtede stemmer eller procenter
+- Én stemme pr. browser via `localStorage`
 - Sjove argumenter, FAQ og en videnskabeligt tvivlsom hyggeberegner
 - Responsivt design til mobil og computer
 - Tilgængelige knapper, labels og reduceret bevægelse
